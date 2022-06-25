@@ -10,7 +10,7 @@ namespace FindMaxUsingGeneric
             bool flag = true;
             while (flag)
             {
-                Console.WriteLine("Enter the Program that want to be executed : \n 1. Find Maximum Integer \n 2.Exit");
+                Console.WriteLine("Enter the Program that want to be executed : \n 1. Find Maximum Integer \n 2. Find Maximum Float \n 3. Exit");
                 int option = Convert.ToInt32(Console.ReadLine());
                 switch (option)
                 {
@@ -23,6 +23,14 @@ namespace FindMaxUsingGeneric
                         Console.WriteLine("Maximum Number is : " + result);
                         break;
                     case 2:
+                        Console.WriteLine("Enter First number, Second number, Third number to check : ");
+                        double firstNum = Convert.ToDouble(Console.ReadLine());
+                        double secondNum = Convert.ToDouble(Console.ReadLine());
+                        double thirdNum = Convert.ToDouble(Console.ReadLine());
+                        double res = MaximumSolution.FindMax(firstNum, secondNum, thirdNum);
+                        Console.WriteLine("The Maximum Number is : " + res);
+                        break;
+                    case 3:
                         flag = false;
                         break;
                 }
