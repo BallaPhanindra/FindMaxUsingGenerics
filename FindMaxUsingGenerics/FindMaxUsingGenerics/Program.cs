@@ -10,7 +10,7 @@ namespace FindMaxUsingGeneric
             bool flag = true;
             while (flag)
             {
-                Console.WriteLine("Enter the Program that want to be executed : \n 1. Find Maximum Integer \n 2. Find Maximum Float \n 3. Exit");
+                Console.WriteLine("Enter the Program that want to be executed : \n 1. Find Maximum Integer \n 2. Find Maximum Float \n 3. Maximum String \n 4. Exit");
                 int option = Convert.ToInt32(Console.ReadLine());
                 switch (option)
                 {
@@ -31,6 +31,14 @@ namespace FindMaxUsingGeneric
                         Console.WriteLine("The Maximum Number is : " + res);
                         break;
                     case 3:
+                        Console.WriteLine("Enter Three Strings to check : ");
+                        string firstName = Convert.ToString(Console.ReadLine());
+                        string secondName = Convert.ToString(Console.ReadLine());
+                        string thirdName = Convert.ToString(Console.ReadLine());
+                        string largest = MaximumSolution.FindMax(firstName, secondName, thirdName);
+                        Console.WriteLine("The Largest String is : " + largest);
+                        break;
+                    case 4:
                         flag = false;
                         break;
                 }
@@ -38,3 +46,4 @@ namespace FindMaxUsingGeneric
         }
     }
 }
+

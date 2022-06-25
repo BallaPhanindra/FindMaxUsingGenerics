@@ -36,5 +36,20 @@ namespace FindMaxUsingGenerics
                 return thirdNumber;
             }
         }
+        public static string FindMax(string firstWord, string secondWord, string thirdWord)
+        {
+            if (firstWord.Length > secondWord.Length && firstWord.Length > thirdWord.Length)
+            {
+                return firstWord;
+            }
+            if (secondWord.Length > firstWord.Length && secondWord.Length > thirdWord.Length)
+            {
+                return secondWord;
+            }
+            else
+            {
+                return thirdWord;
+            }
+        }
     }
 }
