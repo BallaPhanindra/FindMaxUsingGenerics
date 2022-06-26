@@ -22,7 +22,6 @@ namespace FindMaxUsingGeneric
             MaxOf3 mx = new MaxOf3();
             mx.FindMax(intArray);
         }
-
         public class MaxOf3
         {
             public void FindMax(int[] inputArray)
