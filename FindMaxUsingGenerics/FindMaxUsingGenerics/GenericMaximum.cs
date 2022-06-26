@@ -28,11 +28,11 @@ namespace FindMaxUsingGenerics
             return sorted_values[^1];
         }
 
-        //public T MaxMethhod()
-        //{
-        //    var max = MaxValue(this.value);
-        //    return max;
-        //}
+        public T maxmethhod()
+        {
+            var max = MaxValue(this.value);
+            return max;
+        }
 
         public void PrintMaxValue()
         {

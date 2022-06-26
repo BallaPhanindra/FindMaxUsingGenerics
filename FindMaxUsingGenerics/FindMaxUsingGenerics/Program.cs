@@ -1,23 +1,22 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace FindMaxUsingGenerics
 {
-    class Program<T> where T : IComparable
+    class Program
     {
         static void Main(string[] args)
         {
-            int[] intArray=new int[] {2,1,3,1,5,7};
-            GenericMaximum<int> genInt = new GenericMaximum<int>(intArray);
-            genInt.PrintMaxValue();
+            Console.WriteLine("Find Max Number");
 
-            char[] charArray = new char[] { 'w', 'j', 'k' };
-            GenericMaximum<char> genChar = new GenericMaximum<char>(charArray);
-            genChar.PrintMaxValue();
+            int[] intArray = { 3, 8, 6, 1, 4, };
+            double[] doubleArray = { 1.2, 1.8, 3.2, 2.8, 7.9 };
+            String[] stringArray = { "12", "24", "56", "34", "89" };
 
-            double[] doubleArray = new double[] { 23.4, 5.5, 12.1,34.2,12.8 };
-            GenericMaximum<double> genDouble = new GenericMaximum<double>(doubleArray);
-            genDouble.PrintMaxValue();
-        }       
+            new GenericMaximum<int>(intArray).PrintMaxValue();
+            new GenericMaximum<double>(doubleArray).PrintMaxValue();
+            new GenericMaximum<string>(stringArray).PrintMaxValue();
+
+        }
     }
 }
-
