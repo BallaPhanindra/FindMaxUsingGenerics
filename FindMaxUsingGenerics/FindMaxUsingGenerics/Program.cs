@@ -1,47 +1,44 @@
-﻿using FindMaxUsingGenerics;
-using System;
+﻿using System;
 
 namespace FindMaxUsingGeneric
 {
-    class Program
+    class Program<T> where T : IComparable
     {
         static void Main(string[] args)
         {
-            bool flag = true;
-            while (flag)
+            Console.WriteLine("Please enter 1st value:");
+            int a = Int32.Parse(Console.ReadLine());
+            Console.WriteLine("Please enter 2nd value");
+            int b=Int32.Parse(Console.ReadLine());
+            Console.WriteLine("Please enter 3rd value");
+            int c = Int32.Parse(Console.ReadLine());
+
+            Console.WriteLine("=====================");
+
+            int[] intArray=new int[] {a,b,c};
+            char[] charArray = new char[] { 'w', 'j', 'k' };
+            double[] doubleArray = new double[] {2.5,3.1,4.2};
+
+            MaxOf3 mx = new MaxOf3();
+            mx.FindMax(intArray);
+        }
+        public class MaxOf3
+        {
+            public void FindMax(int[] inputArray)
             {
-                Console.WriteLine("Enter the Program that want to be executed : \n 1. Find Maximum Integer \n 2. Find Maximum Float \n 3. Maximum String \n 4. Exit");
-                int option = Convert.ToInt32(Console.ReadLine());
-                switch (option)
+                if (inputArray[0]>inputArray[1]&& inputArray[0] > inputArray[2])
                 {
-                    case 1:
-                        Console.WriteLine("Enter First number, Second number, Third number : ");
-                        int first = Convert.ToInt32(Console.ReadLine());
-                        int second = Convert.ToInt32(Console.ReadLine());
-                        int third = Convert.ToInt32(Console.ReadLine());
-                        int result = MaximumSolution.FindMax(first, second, third);
-                        Console.WriteLine("Maximum Number is : " + result);
-                        break;
-                    case 2:
-                        Console.WriteLine("Enter First number, Second number, Third number to check : ");
-                        double firstNum = Convert.ToDouble(Console.ReadLine());
-                        double secondNum = Convert.ToDouble(Console.ReadLine());
-                        double thirdNum = Convert.ToDouble(Console.ReadLine());
-                        double res = MaximumSolution.FindMax(firstNum, secondNum, thirdNum);
-                        Console.WriteLine("The Maximum Number is : " + res);
-                        break;
-                    case 3:
-                        Console.WriteLine("Enter Three Strings to check : ");
-                        string firstName = Convert.ToString(Console.ReadLine());
-                        string secondName = Convert.ToString(Console.ReadLine());
-                        string thirdName = Convert.ToString(Console.ReadLine());
-                        string largest = MaximumSolution.FindMax(firstName, secondName, thirdName);
-                        Console.WriteLine("The Largest String is : " + largest);
-                        break;
-                    case 4:
-                        flag = false;
-                        break;
+                    Console.WriteLine(inputArray[0]+" is maximum");
                 }
+                else if(inputArray[1] > inputArray[2]&& inputArray[1] > inputArray[0])
+                {
+                    Console.WriteLine(inputArray[1] + " is maximum");
+                }
+                else
+                {
+                    Console.WriteLine(inputArray[2] + " is maximum");
+                }
+
             }
         }
     }
